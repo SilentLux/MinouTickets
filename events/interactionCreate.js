@@ -37,9 +37,9 @@ module.exports = {
 
         const embed = new client.discord.MessageEmbed()
           .setColor('6d6ee8')
-          .setAuthor('Ticket', 'https://i.imgur.com/oO5ZSRK.png')
+          .setAuthor('Ticket', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
           .setDescription('Séléctionnez la catégorie de votre ticket')
-          .setFooter('ExoHost.fr', 'https://i.imgur.com/oO5ZSRK.png')
+          .setFooter('🐱 • MiaouBot | dev by ray.fr', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
           .setTimestamp();
 
         const row = new client.discord.MessageActionRow()
@@ -48,14 +48,14 @@ module.exports = {
             .setCustomId('category')
             .setPlaceholder('Séléctionnez la catégorie du ticket')
             .addOptions([{
-                label: 'Transaction',
-                value: 'transaction',
-                emoji: '🪙',
+                label: 'Support',
+                value: 'support',
+                emoji: '❓',
               },
               {
-                label: 'Jeux',
-                value: 'jeux',
-                emoji: '🎮',
+                label: 'Suggestion',
+                value: 'suggestion',
+                emoji: '💡',
               },
               {
                 label: 'Autres',
@@ -82,9 +82,9 @@ module.exports = {
               msg.delete().then(async () => {
                 const embed = new client.discord.MessageEmbed()
                   .setColor('6d6ee8')
-                  .setAuthor('Ticket', 'https://i.imgur.com/oO5ZSRK.png')
+                  .setAuthor('Ticket', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
                   .setDescription(`<@!${interaction.user.id}> A créé un ticket ${i.values[0]}`)
-                  .setFooter('ExoHost.fr', 'https://i.imgur.com/oO5ZSRK.png')
+                  .setFooter('🐱 • MiaouBot | dev by ray.fr', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
                   .setTimestamp();
 
                 const row = new client.discord.MessageActionRow()
@@ -107,14 +107,14 @@ module.exports = {
                 });
               });
             };
-            if (i.values[0] == 'transaction') {
+            if (i.values[0] == 'support') {
               c.edit({
-                parent: client.config.parentTransactions
+                parent: client.config.parentsupports
               });
             };
-            if (i.values[0] == 'jeux') {
+            if (i.values[0] == 'suggestion') {
               c.edit({
-                parent: client.config.parentJeux
+                parent: client.config.parentsuggestion
               });
             };
             if (i.values[0] == 'autre') {
@@ -192,9 +192,9 @@ module.exports = {
             .then(async () => {
               const embed = new client.discord.MessageEmbed()
                 .setColor('6d6ee8')
-                .setAuthor('Ticket', 'https://i.imgur.com/oO5ZSRK.png')
+                .setAuthor('Ticket', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
                 .setDescription('```Contrôle des tickets```')
-                .setFooter('ExoHost.fr', 'https://i.imgur.com/oO5ZSRK.png')
+                .setFooter('🐱 • MiaouBot | dev by ray.fr', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
                 .setTimestamp();
 
               const row = new client.discord.MessageActionRow()
@@ -248,17 +248,17 @@ module.exports = {
         if (a.length < 1) a = "Nothing"
         hastebin.createPaste(a, {
             contentType: 'text/plain',
-            server: 'https://hastebin.com'
+            server: 'https://www.toptal.com/developers/hastebin/documents'
           }, {})
           .then(function (urlToPaste) {
             const embed = new client.discord.MessageEmbed()
-              .setAuthor('Logs Ticket', 'https://i.imgur.com/oO5ZSRK.png')
+              .setAuthor('Logs Ticket', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
               .setDescription(`📰 Logs du ticket \`${chan.id}\` créé par <@!${chan.topic}> et supprimé par <@!${interaction.user.id}>\n\nLogs: [**Cliquez ici pour voir les logs**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
 
             const embed2 = new client.discord.MessageEmbed()
-              .setAuthor('Logs Ticket', 'https://i.imgur.com/oO5ZSRK.png')
+              .setAuthor('Logs Ticket', 'https://images-ext-1.discordapp.net/external/OEBcWxcV4ZXXLXSEohHBHU0lWu25MNxwEHsVjJZqAjM/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/931451884336742400/d5789ee4b4c8ede488be407affe28cac.png')
               .setDescription(`📰 Logs de votre ticket \`${chan.id}\`: [**Cliquez ici pour voir les logs**](${urlToPaste})`)
               .setColor('2f3136')
               .setTimestamp();
