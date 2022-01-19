@@ -1,3 +1,4 @@
+const keepAlive = require('./server');
 const fs = require('fs');
 const {
   Client,
@@ -5,6 +6,8 @@ const {
   Intents
 } = require('discord.js');
 const config = require('./config.json');
+const token = process.env.Token;
+
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS],
@@ -46,4 +49,6 @@ client.on('interactionCreate', async interaction => {
   };
 });
 
-client.login(require('./token.json').token);
+keepAlive();
+
+client.login(token);
